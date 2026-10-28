@@ -1,0 +1,12 @@
+# Per-repo factory config (see software-factory/.factory.example.yml). Defaults elsewhere.
+commands:
+  install: npm ci
+  test: npm run test:all
+  lint: npm run lint
+  typecheck: npm run typecheck
+
+languages: [typescript, python]
+
+autoMerge:
+  enabled: true
+  method: squash
