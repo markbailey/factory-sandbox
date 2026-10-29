@@ -10,3 +10,8 @@ export const createSession = (user: string, settings: Settings, now: number): Re
   user.trim() === "" ? err("empty user") : ok({ user, expiresAt: now + settings.sessionTtlSeconds * 1000 })
 
 export const isExpired = (session: Session, now: number): boolean => now >= session.expiresAt
+
+export const renewSession = (session: Session, settings: Settings, now: number): Result<Session> =>
+  isExpired(session, now)
+    ? err("session expired")
+    : ok({ user: session.user, expiresAt: now + settings.sessionTtlSeconds * 1000 })
