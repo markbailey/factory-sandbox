@@ -10,3 +10,7 @@ languages: [typescript, python]
 autoMerge:
   enabled: true
   method: squash
+
+blast: # points -> level
+  approvals:
+    high: 1
