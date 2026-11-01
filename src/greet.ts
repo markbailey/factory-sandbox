@@ -6,5 +6,5 @@ export const greet = (name: string, settings: Settings): Result<string> =>
 
 export const farewell = (name: string): Result<string> => {
   const trimmed = name.trim()
-  return trimmed ? ok(`Goodbye ${trimmed}!`) : err("no name")
+  return trimmed ? ok(`Goodbye, ${trimmed}!`) : err("no name")
 }
