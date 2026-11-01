@@ -26,7 +26,7 @@ describe("farewell", () => {
     expect(farewell("")).toEqual({ ok: false, error: "no name" })
   })
   it("trims surrounding whitespace from the name", () => {
-    expect(farewell("  ann ")).toEqual({ ok: true, value: "Goodbye, ann!" })
+    expect(farewell("\t ann \n")).toEqual({ ok: true, value: "Goodbye, ann!" })
   })
   it("rejects a whitespace-only name", () => {
     expect(farewell("   ")).toEqual({ ok: false, error: "no name" })
